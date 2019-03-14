@@ -21,6 +21,7 @@ namespace DrawerPrototype
         {
             if (isSlideOutInView == false)
             {
+                slideOutScrollView.IsVisible = true;
                 addNewbtn.IsEnabled = false;
                 // animate the content to its original position (defined in corresponding xaml file)
                 addNewbtn.TranslateTo(-(slideOutScrollView.Width - addNewbtn.Width), 0, 1000);
@@ -45,6 +46,7 @@ namespace DrawerPrototype
             base.OnAppearing();
             //screenWidth = Application.Current.MainPage.Width;
             // set the content out of the bounds of the screen
+            slideOutScrollView.IsVisible = false;
             slideOutScrollView.TranslationX = (slideOutScrollView.Width);
             isSlideOutInView = false;
 
