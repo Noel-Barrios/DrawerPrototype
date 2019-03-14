@@ -15,7 +15,6 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
     <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
     <NuGetPackageImportStamp>
@@ -93,7 +92,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DrawerPrototype\DrawerPrototype.csproj">
-      <Project>{4F1147EE-A680-4709-AAF2-8476738482B2}</Project>
+      <Project>{582E20A6-BE74-4356-8870-0C32444CA908}</Project>
       <Name>DrawerPrototype</Name>
     </ProjectReference>
   </ItemGroup>
