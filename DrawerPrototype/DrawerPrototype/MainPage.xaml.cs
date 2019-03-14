@@ -15,6 +15,14 @@ namespace DrawerPrototype
         {
 
             InitializeComponent();
+
+
+            isSlideOutInView = false;
+
+            // for UWP purposes, make slideOutScrollView invisible
+            //slideOutScrollView.IsVisible = false;
+
+
         }
 
         async void OnAddNewBtnClicked(object sender, EventArgs args)
@@ -46,9 +54,7 @@ namespace DrawerPrototype
             base.OnAppearing();
             //screenWidth = Application.Current.MainPage.Width;
             // set the content out of the bounds of the screen
-            slideOutScrollView.IsVisible = false;
             slideOutScrollView.TranslationX = (slideOutScrollView.Width);
-            isSlideOutInView = false;
 
         }
 
