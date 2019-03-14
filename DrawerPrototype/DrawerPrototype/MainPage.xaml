@@ -1,14 +1,49 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:DrawerPrototype"
              x:Class="DrawerPrototype.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+    <!--version 1 (a stacklayout implementaiton)-->
+    <!--<StackLayout Orientation="Vertical" Padding="0, 20">
+        <Button Text="Add New" x:Name="addNewbtn" Clicked="OnAddNewBtnClicked" IsEnabled="true" HorizontalOptions="End"></Button>
+        <ScrollView x:Name="slideOutScrollView" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+            <Label  Text="Diffugere  nives, redeunt iam gramina campisarboribusque comae; mut at terra vices et decrescentia  ripas flumina praetereunt; Gratia  cum Nymphis geminisque sororibus audet ducere nuda choros. Inmortalia ne speres, monet annus et almum quae rapit hora diem. Frigora mitescunt zephyris, ver proterit aesta interitura, simul pomifer autumnus fruges effuderit, et mox bruma recurrit iners. Damna tamen celeres reparant caelestia lunae; nos ubi decidimus, quo pius Aeneas, quo Tullus dives et Ancus, pulvis et umbra sumus. Quis scit an adiciant hodiernae crastina summae tempora di superi? Cuncta manus avidas fugient heredis, amico quae dederis animo. Cum semel occideris et de te splendida Minos fecerit arbitria, non, Torquate, genus, non te facundia, non te restituet pietas; Infernis neque enim tenebris Diana pudicum liberat Hippolytum, nec Lethaea valet Theseus abrumpere caro vincula Pirithoo." ></Label>
+        </ScrollView>
+    </StackLayout>-->
+    
+    <!--version 2 (identical to above but with a Grid)-->
+    <Grid x:Name="grid" Padding="0,20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />  
+        </Grid.ColumnDefinitions>
+        
+        <Button Text="Add New" TextColor="Black" FontAttributes="Bold" x:Name="addNewbtn" Clicked="OnAddNewBtnClicked" BackgroundColor="White" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="End"></Button>
+        <ScrollView BackgroundColor="White" x:Name="slideOutScrollView" HorizontalOptions="FillAndExpand" Grid.Row="1" Grid.Column="1" VerticalOptions="FillAndExpand" >
+            <!--<Label BackgroundColor="white"  Text="Diffugere  nives, redeunt iam gramina campisarboribusque comae; mut at terra vices et decrescentia  ripas flumina praetereunt; Gratia  cum Nymphis geminisque sororibus audet ducere nuda choros. Inmortalia ne speres, monet annus et almum quae rapit hora diem. Frigora mitescunt zephyris, ver proterit aesta interitura, simul pomifer autumnus fruges effuderit, et mox bruma recurrit iners. Damna tamen celeres reparant caelestia lunae; nos ubi decidimus, quo pius Aeneas, quo Tullus dives et Ancus, pulvis et umbra sumus. Quis scit an adiciant hodiernae crastina summae tempora di superi? Cuncta manus avidas fugient heredis, amico quae dederis animo. Cum semel occideris et de te splendida Minos fecerit arbitria, non, Torquate, genus, non te facundia, non te restituet pietas; Infernis neque enim tenebris Diana pudicum liberat Hippolytum, nec Lethaea valet Theseus abrumpere caro vincula Pirithoo." ></Label>-->
+            <StackLayout Orientation="Vertical">
+                <Frame HasShadow="false" OutlineColor="Purple" Margin="20,0,10,0" CornerRadius="0" >
+                    <StackLayout>
+                        <Label Text="Condition(s):"></Label>
+                    </StackLayout>
+                </Frame>
+                <Frame HasShadow="false" OutlineColor="Blue" Margin="20,0,10,0" CornerRadius="0" >
+                    <StackLayout Orientation="Vertical" >
+                        <Label Text="CIDP/ GBS/ MGUSP/ PN*" ></Label>
+                        <Label FontAttributes="Bold" Text="View/select from 8 assessments"></Label>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+            
+        </ScrollView>
+        
+    </Grid>
 
 </ContentPage>
