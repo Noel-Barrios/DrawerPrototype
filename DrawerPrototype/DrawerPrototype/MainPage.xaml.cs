@@ -22,7 +22,8 @@ namespace DrawerPrototype
 
             isSlideOutInView = false;
 
-            Debug.WriteLine("in constructor but just after onAppearing(): The Width of the slideOutScroll View is " + slideOutScrollViewWidth + ".  The Width of the addNewBtn is " + addNewBtnWidth + ".  The total transition for AddNewBtn will be: " + -(slideOutScrollViewWidth - addNewBtnWidth));
+            Debug.WriteLine("in constructor (Global) but just after onAppearing(): The Width of the slideOutScroll View is " + slideOutScrollViewWidth + ".  The Width of the addNewBtn is " + addNewBtnWidth + ".  The total transition for AddNewBtn will be: " + -(slideOutScrollViewWidth - addNewBtnWidth));
+            Debug.WriteLine("in constructor (current) but just after onAppearing(): The Width of the slideOutScroll View is " + slideOutScrollView.Width + ".  The Width of the addNewBtn is " + addNewBtn.Width + ".  The total transition for AddNewBtn will be: " + -(slideOutScrollView.Width - addNewBtn.Width));
 
 
         }
@@ -56,6 +57,11 @@ namespace DrawerPrototype
             base.OnAppearing();
             //screenWidth = Application.Current.MainPage.Width;
             // set the content out of the bounds of the screen
+            slideOutScrollViewWidth = slideOutScrollView.Width;
+            addNewBtnWidth = addNewBtn.Width;
+            Debug.WriteLine("in onAppearing() before TranslationX: The Width of the slideOutScroll View is " + slideOutScrollViewWidth + ".  The Width of the addNewBtn is " + addNewBtnWidth + ".  The total transition for AddNewBtn will be: " + -(slideOutScrollViewWidth - addNewBtnWidth));
+
+
             slideOutScrollView.TranslationX = slideOutScrollView.Width;
             slideOutScrollViewWidth = slideOutScrollView.Width;
             addNewBtnWidth = addNewBtn.Width;
