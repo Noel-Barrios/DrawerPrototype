@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,24 +14,19 @@ namespace DrawerPrototype
 
         public MainPage()
         {
-
             InitializeComponent();
 
+            Debug.WriteLine("The Application is currently running on " + Device.RuntimePlatform);
 
             isSlideOutInView = false;
-
-            // for UWP purposes, make slideOutScrollView invisible
-            //slideOutScrollView.IsVisible = false;
-
-
         }
 
         async void OnAddNewBtnClicked(object sender, EventArgs args)
         {
             if (isSlideOutInView == false)
             {
-                slideOutScrollView.IsVisible = true;
                 addNewbtn.IsEnabled = false;
+                Debug.WriteLine("The Width of the slideOutScroll View is " +slideOutScrollView.Width +".  The Width of the addNewBtn is " + addNewbtn.Width + ".  The total transition will be: " + -(slideOutScrollView.Width - addNewbtn.Width));
                 // animate the content to its original position (defined in corresponding xaml file)
                 addNewbtn.TranslateTo(-(slideOutScrollView.Width - addNewbtn.Width), 0, 1000);
                 await slideOutScrollView.TranslateTo(0, 0, 1000);
@@ -55,7 +51,6 @@ namespace DrawerPrototype
             //screenWidth = Application.Current.MainPage.Width;
             // set the content out of the bounds of the screen
             slideOutScrollView.TranslationX = (slideOutScrollView.Width);
-
         }
 
     }
